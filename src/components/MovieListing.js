@@ -21,7 +21,6 @@ class MovieListing extends Component{
           <img src={`${baseUrl}${imgSizeSmall}/${this.props.poster}`} alt={`${this.props.title} poster`} />
         }
         <p>Score: {this.props.score}</p>
-        <hr />
       </div>
     )
   }

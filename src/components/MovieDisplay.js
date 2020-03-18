@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MovieListing from "../components/MovieListing.js"
 import MovieDetail from "../components/MovieDetail.js"
 import Popup from "../components/Popup.js"
+import PopupToggle from "../components/PopupToggle.js"
 
 /** 
  * Movie Display component to handle presentation of movie data
@@ -36,18 +37,19 @@ class MovieDisplay extends Component{
 }
 
 /**
- * return an array of <MovieListing> populated with Movie Data
+ * return an array of <MovieListing> wrapped in a <PopupToggle> populated with Movie Data
  */
 function generateMovieList(movies){
   return movies.map((movie, i) => {
-    return <MovieListing 
-            title={movie.title} 
-            key={`movie${i}`}
-            date={movie.release_date}
-            score={movie.vote_count}
-            poster={movie.poster_path}
-            movieId={i}
-          />
+    return  <PopupToggle key={`toggle${i}`} movieId={i}>
+              <MovieListing 
+                title={movie.title} 
+                key={`movie${i}`}
+                date={movie.release_date}
+                score={movie.vote_count}
+                poster={movie.poster_path}
+              />
+            </PopupToggle>
   })
 }
 
