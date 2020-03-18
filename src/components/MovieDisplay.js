@@ -37,6 +37,7 @@ class MovieDisplay extends Component{
                 key={`toggle${i}`} 
                 toggleAction={this.toggleDetail} 
                 toggleTarget={i}
+                actionText="Details"
               >
                 <MovieListing 
                   title={movie.title} 
