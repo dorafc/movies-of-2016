@@ -10,7 +10,7 @@ class Popup extends Component{
     return(
       <div className='popup'>
         <h3>Popup</h3>
-        <p>Close</p>
+        <button onClick={(e)=>this.props.toggleAction(e, null)} >Close</button>
         {this.props.children}
       </div>
     )

@@ -62,7 +62,7 @@ class MovieDisplay extends Component{
 
         {/* conditionaly show the popup modal showing the full details of a movie */}
         {this.state.showDetail !== null &&
-        <Popup>
+        <Popup toggleAction={this.toggleDetail}>
           <MovieDetail 
             title={this.props.movies[this.state.showDetail].title} 
             date={this.props.movies[this.state.showDetail].release_date}
