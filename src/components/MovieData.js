@@ -31,9 +31,12 @@ class MovieData extends Component{
         return response.json()
       })
       .then(data => {
+        let newResults = cleanResults(data.results, filteredKeys)
+        cleanDates(newResults, 'release_date')
+
         // update state to include updated results
         this.setState({
-          results : cleanResults(data.results, filteredKeys)
+          results : newResults
         })
       })
       .catch(error => console.log(error))
@@ -48,8 +51,12 @@ class MovieData extends Component{
   }
 }
 
-// clean up results for use in react state
-// returns an array with including only key value pairs specified in the keys parameters
+/**
+ * clean up results for use in react state
+ * returns an array with including only key value pairs specified in the keys parameters
+ * @param {Object[]} results - full results returned from the API endpoint
+ * @param {string[]} keys - array of keys of data to be included in the app
+ */
 function cleanResults(results, keys){
   return results.map(result => {
     let newResult = {}
@@ -60,6 +67,20 @@ function cleanResults(results, keys){
     })
 
     return newResult;
+  })
+}
+
+ /**
+  * takes a date string and returns a string in a more human readable form
+  * @param {Object[]} results - array of movie objects
+  * @param {string} date - key for the value that will be updated to a date string
+  */
+function cleanDates(results, date){
+  return results.map(result => {
+    //  generate new date string
+    let newDate = new Date(result[date]).toDateString()
+    result[date] = newDate
+    return result
   })
 }
 
