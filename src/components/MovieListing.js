@@ -15,7 +15,11 @@ class MovieListing extends Component{
       <div className="movie-listing">
         <h3>{this.props.title}</h3>
         <h4>{this.props.date}</h4>
-        <img src={`${baseUrl}${imgSizeSmall}/${this.props.poster}`} alt={`${this.props.title} poster`} />
+        
+        {/* only render a poster if the movie data includes an image path for the poster */}
+        {this.props.poster &&
+          <img src={`${baseUrl}${imgSizeSmall}/${this.props.poster}`} alt={`${this.props.title} poster`} />
+        }
         <p>Score: {this.props.score}</p>
         <hr />
       </div>

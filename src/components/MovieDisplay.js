@@ -4,8 +4,8 @@ import MovieDetail from "../components/MovieDetail.js"
 import Popup from "../components/Popup.js"
 
 /** 
-  * Movie Display component to handle presentation of movie data
-*/
+ * Movie Display component to handle presentation of movie data
+ */
 
 class MovieDisplay extends Component{
   constructor(props){
@@ -17,16 +17,7 @@ class MovieDisplay extends Component{
 
   render(){
     // generate MovieListing components for each movie result passed down through props
-    const listOfMovies = this.props.movies.map((movie, i) => {
-      return <MovieListing 
-              title={movie.title} 
-              key={`movie${i}`}
-              date={movie.release_date}
-              score={movie.vote_count}
-              poster={movie.poster_path}
-              movieId={i}
-            />
-    })
+    const listOfMovies = (this.props.movies.length) ? generateMovieList(this.props.movies) : ''
 
     return(
       <div className="movie-display">
@@ -42,6 +33,22 @@ class MovieDisplay extends Component{
       </div>
     )
   }
+}
+
+/**
+ * return an array of <MovieListing> populated with Movie Data
+ */
+function generateMovieList(movies){
+  return movies.map((movie, i) => {
+    return <MovieListing 
+            title={movie.title} 
+            key={`movie${i}`}
+            date={movie.release_date}
+            score={movie.vote_count}
+            poster={movie.poster_path}
+            movieId={i}
+          />
+  })
 }
 
 export default MovieDisplay
