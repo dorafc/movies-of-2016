@@ -1,13 +1,24 @@
 import React, {Component} from 'react';
 
 /** 
-  * MovieListing renders the short display of movie data
+  * MovieListing renders the short display of movie data used in the main listing
 */
+
+// NOTE: the TMDb API contains a configuration API that includes information about the image URL
+// and available sizes
+const baseUrl = "https://image.tmdb.org/t/p/"
+const imgSizeSmall = "w154"
 
 class MovieListing extends Component{
   render(){
     return (
-      <h2>Movie Listing</h2>
+      <div className="movie-listing">
+        <h3>{this.props.title}</h3>
+        <h4>{this.props.date}</h4>
+        <img src={`${baseUrl}${imgSizeSmall}/${this.props.poster}`} alt={`${this.props.title} poster`} />
+        <p>Score: {this.props.score}</p>
+        <hr />
+      </div>
     )
   }
 }

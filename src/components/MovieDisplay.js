@@ -18,7 +18,14 @@ class MovieDisplay extends Component{
   render(){
     // generate MovieListing components for each movie result passed down through props
     const listOfMovies = this.props.movies.map((movie, i) => {
-      return <MovieListing title={movie.title} key={`movie${i}`}/>
+      return <MovieListing 
+              title={movie.title} 
+              key={`movie${i}`}
+              date={movie.release_date}
+              score={movie.vote_count}
+              poster={movie.poster_path}
+              movieId={i}
+            />
     })
 
     return(
