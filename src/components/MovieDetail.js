@@ -5,7 +5,11 @@ import React, {Component} from 'react';
 */
 
 class MovieDetail extends Component{
-
+  render(){
+    return (
+      <h2>Movie Detail</h2>
+    )
+  }
 }
 
 export default MovieDetail
