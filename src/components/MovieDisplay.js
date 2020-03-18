@@ -59,14 +59,21 @@ class MovieDisplay extends Component{
     return(
       <div className="movie-display">
         <h3>Movie Display</h3>
-        {listOfMovies}
 
         {/* conditionaly show the popup modal showing the full details of a movie */}
-        {this.state.showDetail &&
+        {this.state.showDetail !== null &&
         <Popup>
-          <MovieDetail />
+          <MovieDetail 
+            title={this.props.movies[this.state.showDetail].title} 
+            date={this.props.movies[this.state.showDetail].release_date}
+            score={this.props.movies[this.state.showDetail].vote_count}
+            poster={this.props.movies[this.state.showDetail].poster_path}
+            overview={this.props.movies[this.state.showDetail].overview}
+          />
         </Popup>
         }
+
+        {listOfMovies}
       </div>
     )
   }
