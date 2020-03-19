@@ -57,7 +57,7 @@ class MovieDisplay extends Component{
                   title={movie.title} 
                   key={`movie${movie.id}`}
                   date={movie.release_date}
-                  score={movie.vote_count}
+                  score={movie.popularity}
                   poster={movie.poster_path}
                 />
               </PopupToggle>
@@ -80,7 +80,7 @@ class MovieDisplay extends Component{
           <MovieDetail 
             title={this.props.movies[this.state.showDetail].title} 
             date={this.props.movies[this.state.showDetail].release_date}
-            score={this.props.movies[this.state.showDetail].vote_count}
+            score={this.props.movies[this.state.showDetail].popularity}
             poster={this.props.movies[this.state.showDetail].poster_path}
             overview={this.props.movies[this.state.showDetail].overview}
             toggleFavorite={this.toggleFavorite}

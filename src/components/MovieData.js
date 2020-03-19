@@ -23,7 +23,7 @@ class MovieData extends Component{
     const popularity = "desc"           // order of popularity, either desc or asc
 
     // array of keys containing information needed, other key value pairs will be removed from the data
-    const filteredKeys = ['title', 'release_date', 'poster_path', 'vote_count', 'overview', 'id']
+    const filteredKeys = ['title', 'release_date', 'poster_path', 'popularity', 'overview', 'id']
     
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.${popularity}&include_adult=false&include_video=false&page=1&primary_release_year=${releaseYear}`)
       .then((response) => {
