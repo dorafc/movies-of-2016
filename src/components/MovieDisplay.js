@@ -29,6 +29,19 @@ class MovieDisplay extends Component{
   }
 
   /**
+   * Updates favorited state for a movie based on the id from TMDb
+   */
+  toggleFavorite = (e, movieId, newFavorite) => {
+    if (e){
+      e.preventDefault()
+    }
+    let favoriteKey = "favorite" + movieId
+    this.setState({
+      [favoriteKey] : newFavorite
+    })
+  }
+
+  /**
    * return an array of <MovieListing> wrapped in a <PopupToggle> populated with Movie Data
    */
   generateMovieList(movies){
@@ -40,8 +53,9 @@ class MovieDisplay extends Component{
                 actionText="Details"
               >
                 <MovieListing 
+                  id={movie.id}
                   title={movie.title} 
-                  key={`movie${i}`}
+                  key={`movie${movie.id}`}
                   date={movie.release_date}
                   score={movie.vote_count}
                   poster={movie.poster_path}
@@ -69,6 +83,9 @@ class MovieDisplay extends Component{
             score={this.props.movies[this.state.showDetail].vote_count}
             poster={this.props.movies[this.state.showDetail].poster_path}
             overview={this.props.movies[this.state.showDetail].overview}
+            toggleFavorite={this.toggleFavorite}
+            id={this.props.movies[this.state.showDetail].id}
+            favorite={this.state["favorite" + this.props.movies[this.state.showDetail].id] || false}
           />
         </Popup>
         }

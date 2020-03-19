@@ -23,6 +23,12 @@ class MovieDetail extends Component{
         
         <p>Score: {this.props.score}</p>
         <p>{this.props.overview}</p>
+
+        {/* Favorite Toggle Button */}
+        <button onClick={(e) => this.props.toggleFavorite(e, this.props.id, !this.props.favorite)}>
+          {(this.props.favorite) ? "Unfavorite" : "Favorite"}
+        </button>
+
         <hr />
       </div>
     )
