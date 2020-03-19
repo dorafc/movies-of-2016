@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 // styles
 import PopupToggleDiv from '../styles/popupToggle'
-import Button from '../styles/Button'
+import { Button } from '../styles/Button'
 
 /**
  * <PopupToggle> contains content that triggers a popup

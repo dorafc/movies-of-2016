@@ -15,4 +15,8 @@ const Button =  styled.button`
   }
 `
 
-export default Button
+const CloseButton = styled(Button)`
+  float: right;
+`
+
+export { Button, CloseButton }

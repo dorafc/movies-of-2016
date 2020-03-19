@@ -37,7 +37,6 @@ class MovieDetail extends Component{
           {(this.props.favorite) ? "Unfavorite" : "Favorite"}
         </button>
 
-        <hr />
       </div>
     )
   }

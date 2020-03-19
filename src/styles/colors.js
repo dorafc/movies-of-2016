@@ -1,4 +1,4 @@
-import { darken } from "polished";
+import { darken, transparentize } from "polished";
 
 // colors generated from https://coolors.co/e8e9f3-cecece-a6a6a8-282a44-777cba
 export const colorPalette = {
@@ -17,5 +17,6 @@ export const colors = {
   modalShadow : colorPalette.dkBlue,
   modalAccent : colorPalette.lgtBlue,
   button : colorPalette.lgtBlue,
-  buttonHover : darken(0.1, colorPalette.lgtBlue)
+  buttonHover : darken(0.1, colorPalette.lgtBlue),
+  popUpCover : transparentize(0.2, colorPalette.dkBlue)
 }
