@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+// styles
+import PopupToggleDiv from '../styles/popupToggle'
+import Button from '../styles/Button'
+
 /**
  * <PopupToggle> contains content that triggers a popup
  * Relies on children prop to render content
@@ -10,13 +14,12 @@ import React, {Component} from 'react';
 class PopupToggle extends Component{
   render(){
     return(
-      <div className='popup-toggle'>
+      <PopupToggleDiv className='popup-toggle'>
         {this.props.children}
-        <button onClick={(e)=>this.props.toggleAction(e, this.props.toggleTarget)}>
+        <Button onClick={(e)=>this.props.toggleAction(e, this.props.toggleTarget)}>
           {this.props.actionText}
-        </button>
-        <hr />
-      </div>
+        </Button>
+      </PopupToggleDiv>
     )
   }
 }

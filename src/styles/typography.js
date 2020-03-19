@@ -2,7 +2,7 @@
 export const robotoFamily = '"Roboto", sans-serif'
 
 // font weights
-export const weights = {
+export const weight = {
   regular : 400,
   bold : 700
 }
