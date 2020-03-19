@@ -1,4 +1,4 @@
-import { darken, transparentize } from "polished";
+import { darken, lighten, transparentize } from "polished";
 
 // colors generated from https://coolors.co/e8e9f3-cecece-a6a6a8-282a44-777cba
 export const colorPalette = {
@@ -12,6 +12,7 @@ export const colorPalette = {
 
 export const colors = {
   defaultText : colorPalette.dkBlue,
+  secondaryText : lighten(0.1, colorPalette.dkBlue),
   background : colorPalette.medium,
   modalBackgorund : colorPalette.white,
   modalShadow : colorPalette.dkBlue,
