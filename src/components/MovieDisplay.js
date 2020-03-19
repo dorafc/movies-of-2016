@@ -5,7 +5,8 @@ import Popup from "../components/Popup.js"
 import PopupToggle from "../components/PopupToggle.js"
 
 /** 
- * Movie Display component to handle presentation of movie data
+ * <MovieDisplay> to handle presentation of movie data
+ * @props {Object[]} Movies - array of movie data
  */
 
 class MovieDisplay extends Component{
@@ -23,6 +24,8 @@ class MovieDisplay extends Component{
     if (e){
       e.preventDefault()
     }
+
+    // update state to reflect detail popup
     this.setState({
       showDetail : detailId
     })
@@ -35,6 +38,8 @@ class MovieDisplay extends Component{
     if (e){
       e.preventDefault()
     }
+
+    // update state to show favorite state by unique movieId
     let favoriteKey = "favorite" + movieId
     this.setState({
       [favoriteKey] : newFavorite
@@ -43,6 +48,7 @@ class MovieDisplay extends Component{
 
   /**
    * return an array of <MovieListing> wrapped in a <PopupToggle> populated with Movie Data
+   * @param {Object[]} movies - list of movie data objects
    */
   generateMovieList(movies){
     return movies.map((movie, i) => {
@@ -72,8 +78,6 @@ class MovieDisplay extends Component{
 
     return(
       <div className="movie-display">
-        <h3>Movie Display</h3>
-
         {/* conditionaly show the popup modal showing the full details of a movie */}
         {this.state.showDetail !== null &&
         <Popup toggleAction={this.toggleDetail}>

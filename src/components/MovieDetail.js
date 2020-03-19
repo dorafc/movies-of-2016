@@ -1,13 +1,21 @@
-import React, {Component} from 'react';
-
-/** 
-  * MovieDetail renders full information about the movie
-*/
+import React, {Component} from 'react'
 
 // NOTE: the TMDb API contains a configuration API that includes information about the image URL
 // and available sizes
 const baseUrl = "https://image.tmdb.org/t/p/"
 const imgSizeSmall = "w300"
+
+/**
+ * <MovieDetail> renders full information about the movie
+ * @props {string} title - title of the moview
+ * @props {string} date - release date of the movie
+ * @props {number} score - movie popularity rank
+ * @props {string} poster - URL path to poster image
+ * @props {string} overview - written descirption of the moview
+ * @props {function()} toggleFavorite - update Favorite status in parent component
+ * @props {number} id - unique ID of the movie from the TMDb API
+ * @props {boolean} favorite - favorited status of movie 
+ */
 
 class MovieDetail extends Component{
   render(){

@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 
-/** 
-  * The popup component represents a reusable popup component
-  * Relies on children prop to render content in the popup
-*/
+/**
+ * The popup component represents a reusable popup component
+ * Relies on children prop to render content in the popup
+ * @props {function} toggleAction - function to close the popup
+ * @props {*} children - content for the popup
+ */
 
 class Popup extends Component{
   render(){

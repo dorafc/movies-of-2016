@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import MovieDisplay from '../components/MovieDisplay.js'
 
-/** 
-  * Fetches and manages data from The Movie Database (TMDb) API for use in child components
-  */
-
+// API key stored in .env file
 const apiKey = process.env.REACT_APP_TMDB_KEY
+
+/**
+ * <MovieData> fetches and manages data from The Movie Database (TMDb) API for use in child components
+ */
 
 class MovieData extends Component{
 
@@ -31,6 +32,7 @@ class MovieData extends Component{
         return response.json()
       })
       .then(data => {
+        // clean up data through filtering only neccesary keys and changing the date format
         let newResults = cleanResults(data.results, filteredKeys)
         cleanDates(newResults, 'release_date')
 

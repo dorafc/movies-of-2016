@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 
-/** 
-  * A wrapper component that contains content that triggers a popup
-  * Relies on children prop to render content
-*/
+/**
+ * <PopupToggle> contains content that triggers a popup
+ * Relies on children prop to render content
+ * @props {function} toggleAction - function to close the popup
+ * @props {*} children - content for the popup
+ */
 
 class PopupToggle extends Component{
   render(){
