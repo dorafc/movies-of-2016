@@ -3,10 +3,12 @@ import MovieListing from "../components/MovieListing.js"
 import MovieDetail from "../components/MovieDetail.js"
 import Popup from "../components/Popup.js"
 import PopupToggle from "../components/PopupToggle.js"
+import Loader from "../components/Loader.js"
 
 /** 
  * <MovieDisplay> to handle presentation of movie data
- * @props {Object[]} Movies - array of movie data
+ * @props {Object[]} movies - array of movie data
+ * @props {boolean} loading - flag if data has been loaded from TMDb 
  */
 
 class MovieDisplay extends Component{
@@ -78,6 +80,11 @@ class MovieDisplay extends Component{
 
     return(
       <div className="movie-display">
+        {/* Show loader graphic while the data is loading */}
+        {this.props.loading &&
+          <Loader />
+        }
+        
         {/* conditionaly show the popup modal showing the full details of a movie */}
         {this.state.showDetail !== null &&
         <Popup toggleAction={this.toggleDetail}>

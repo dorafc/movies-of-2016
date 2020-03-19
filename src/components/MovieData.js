@@ -4,6 +4,8 @@ import MovieDisplay from '../components/MovieDisplay.js'
 // API key stored in .env file
 const apiKey = process.env.REACT_APP_TMDB_KEY
 
+let movieData = []
+
 /**
  * <MovieData> fetches and manages data from The Movie Database (TMDb) API for use in child components
  */
@@ -13,7 +15,7 @@ class MovieData extends Component{
   constructor(props){
     super(props)
     this.state = {
-      results : []
+      loading : true
     }
   }
 
@@ -36,9 +38,11 @@ class MovieData extends Component{
         let newResults = cleanResults(data.results, filteredKeys)
         cleanDates(newResults, 'release_date')
 
+        movieData = newResults
+
         // update state to include updated results
         this.setState({
-          results : newResults
+          loading : false
         })
       })
       .catch(error => console.log(error))
@@ -47,7 +51,7 @@ class MovieData extends Component{
   render(){
     return (
       <>
-        <MovieDisplay movies={this.state.results}/>
+        <MovieDisplay movies={movieData} loading={this.state.loading}/>
       </>
     )
   }
