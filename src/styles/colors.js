@@ -1,4 +1,4 @@
-import { darken, lighten, transparentize } from "polished";
+import { darken, transparentize } from "polished";
 
 // colors generated from https://coolors.co/e8e9f3-cecece-a6a6a8-282a44-777cba
 export const colorPalette = {
