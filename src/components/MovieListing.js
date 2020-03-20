@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 // styled components
-import { MovieListingDiv, PosterSmall, MovieTitle } from "../styles/movieListing"
+import { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate } from "../styles/movieListing"
 
 // NOTE: the TMDb API contains a configuration API that includes information about the image URL
 // and available sizes
@@ -27,10 +27,10 @@ class MovieListing extends Component{
           <PosterSmall src={`${baseUrl}${imgSizeSmall}/${this.props.poster}`} alt={`${this.props.title} poster`} />
         }
 
-        <div className="">
+        <div className="movie-meta">
           <MovieTitle>{this.props.title}</MovieTitle>
-          <p>Released: {this.props.date}</p>
-          <p>Score: {this.props.score}</p>
+          <Score>Score: {this.props.score}</Score>
+          <ReleaseDate>Released: {this.props.date}</ReleaseDate>
         </div>
         
         

@@ -1,5 +1,5 @@
-import { robotoFamily, fontSize, weight } from './typography'
 import { colors } from './colors'
+import { weight } from './typography'
 import styled from "styled-components";
 
 const MovieListingDiv = styled.div`
@@ -17,4 +17,17 @@ const MovieTitle = styled.h3`
   }
 `
 
-export { MovieListingDiv, PosterSmall, MovieTitle }
+const Score = styled.p`
+  border: solid 1px ${colors.secondaryText};
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin: 0;
+  display: block;
+  display: inline-block;
+`
+
+const ReleaseDate = styled.p`
+  font-weight: ${weight.bold};
+`
+
+export { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate }

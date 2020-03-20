@@ -12,7 +12,7 @@ export const colorPalette = {
 
 export const colors = {
   defaultText : colorPalette.dkBlue,
-  secondaryText : lighten(0.1, colorPalette.dkBlue),
+  secondaryText : colorPalette.lgtBlue,
   background : colorPalette.medium,
   modalBackgorund : colorPalette.white,
   modalShadow : colorPalette.dkBlue,
