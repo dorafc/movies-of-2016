@@ -24,8 +24,10 @@ const CloseButton = styled(Button)`
 
 // detail button on movie listing
 const DetailsButton = styled(Button)`
-  float: right;
-  margin-top: -25px;
+  @media (min-width: 525px){
+    float: right;
+    margin-top: -25px;
+  }
 `
 
 // favorite button on movie popup

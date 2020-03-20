@@ -4,11 +4,18 @@ import styled from "styled-components";
 
 // styles for displaying movie information
 const MovieListingDiv = styled.div`
-  display: flex;
+  @media (min-width: 525px){
+    display: flex;
+  }
 `
 
 const PosterSmall = styled.img`
-  margin-right: 20px;
+  @media (min-width: 525px){
+    margin-right: 20px;
+  }
+  @media (max-width: 524px){
+    margin-bottom: 20px;
+  }
 `
 
 const MovieTitle = styled.h3`
