@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 
 // styled components
-import { MovieListingDetail, PosterSmall, MovieTitle, Score, ReleaseDate } from "../styles/movieListing"
+import { MovieListingDetail, PosterMed, MovieTitle, Score, ReleaseDate } from "../styles/movieListing"
 import { FavoriteButton } from '../styles/button'
 
 // NOTE: the TMDb API contains a configuration API that includes information about the image URL
-// and available sizes
+// and available sizes. In a production, it might make sense to call and cache the data, but for the context
+// of this small app, i've saved this data here
 const baseUrl = "https://image.tmdb.org/t/p/"
 const imgSizeMed = "w300"
 
@@ -27,7 +28,7 @@ class MovieDetail extends Component{
       <MovieListingDetail className="movie-detail">
         {/* only render a poster if the movie data includes an image path for the poster */}
         {this.props.poster &&
-          <PosterSmall src={`${baseUrl}${imgSizeMed}/${this.props.poster}`} alt={`${this.props.title} poster`} />
+          <PosterMed src={`${baseUrl}${imgSizeMed}/${this.props.poster}`} alt={`${this.props.title} poster`} />
         }
 
         <div className="movie-meta">

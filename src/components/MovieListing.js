@@ -4,7 +4,8 @@ import React, {Component} from 'react';
 import { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate } from "../styles/movieListing"
 
 // NOTE: the TMDb API contains a configuration API that includes information about the image URL
-// and available sizes
+// and available sizes. In a production, it might make sense to call and cache the data, but for the context
+// of this small app, i've saved this data here
 const baseUrl = "https://image.tmdb.org/t/p/"
 const imgSizeSmall = "w154"
 

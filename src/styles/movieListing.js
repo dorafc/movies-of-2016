@@ -24,6 +24,15 @@ const PosterSmall = styled.img`
   }
 `
 
+const PosterMed = styled.img`
+  @media (min-width: 625px){
+    margin-right: 20px;
+  }
+  @media (max-width: 625px){
+    margin-bottom: 20px;
+  }
+`
+
 const MovieTitle = styled.h3`
   margin: 0 0 13px 0;
   &:before{
@@ -44,4 +53,4 @@ const ReleaseDate = styled.p`
   font-weight: ${weight.bold};
 `
 
-export { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate, MovieListingDetail }
+export { MovieListingDiv, PosterSmall, PosterMed, MovieTitle, Score, ReleaseDate, MovieListingDetail }
