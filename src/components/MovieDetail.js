@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 // styled components
 import { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate } from "../styles/movieListing"
-import { FavoriteButton } from '../styles/Button'
+import { FavoriteButton } from '../styles/button'
 
 // NOTE: the TMDb API contains a configuration API that includes information about the image URL
 // and available sizes

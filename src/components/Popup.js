@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 // styles
-import { PopupDiv, PopupWrap } from '../styles/Popup'
-import { CloseButton } from '../styles/Button'
+import { PopupDiv, PopupWrap } from '../styles/popup'
+import { CloseButton } from '../styles/button'
 
 /**
  * The popup component represents a reusable popup component
