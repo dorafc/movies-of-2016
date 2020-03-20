@@ -3,6 +3,7 @@ import { normalize } from "polished";
 import { robotoFamily, fontSize } from './typography'
 import { colors } from './colors'
 
+// global styles applied accross components
 export const Global = createGlobalStyle`
 ${normalize()}
 html {

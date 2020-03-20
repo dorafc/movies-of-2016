@@ -2,6 +2,7 @@ import { colors } from './colors'
 import { weight } from './typography'
 import styled from "styled-components";
 
+// styles for displaying movie information
 const MovieListingDiv = styled.div`
   display: flex;
 `

@@ -10,6 +10,7 @@ export const colorPalette = {
   lgtBlue : '#777CBA'
 }
 
+// color pallete applied to site theme
 export const colors = {
   defaultText : colorPalette.dkBlue,
   secondaryText : colorPalette.lgtBlue,

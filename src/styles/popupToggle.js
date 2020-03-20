@@ -1,6 +1,7 @@
 import { colors } from './colors'
 import styled from "styled-components";
 
+// Styles for popop toggle component
 const PopupToggleDiv =  styled.div`
   background-color: ${colors.modalBackgorund};
   padding: 20px;
