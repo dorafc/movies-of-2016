@@ -16,6 +16,7 @@ const MovieListingDetail = styled.div`
 `
 
 const PosterSmall = styled.img`
+  max-width: 100%;
   @media (min-width: 525px){
     margin-right: 20px;
   }
@@ -25,6 +26,7 @@ const PosterSmall = styled.img`
 `
 
 const PosterMed = styled.img`
+  max-width: 100%;
   @media (min-width: 625px){
     margin-right: 20px;
   }

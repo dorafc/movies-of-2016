@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
-import { robotoFamily, fontSize } from './typography'
+import { robotoFamily, fontSize, weight } from './typography'
 import { colors } from './colors'
 
 // global styles applied accross components
@@ -24,27 +24,29 @@ body {
 }
 
 h1{
-  font-size: ${fontSize.h1}
+  font-size: ${fontSize.h3};
+  margin-top: 0;
+  font-weight: ${weight.regular};
 }
 
 h2{
-  font-size: ${fontSize.h2}
+  font-size: ${fontSize.h2};
 }
 
 h3{
-  font-size: ${fontSize.h3}
+  font-size: ${fontSize.h3};
 }
 
 h4{
-  font-size: ${fontSize.h4}
+  font-size: ${fontSize.h4};
 }
 
 h5{
-  font-size: ${fontSize.h5}
+  font-size: ${fontSize.h5};
 }
 
 p{
-  font-size: ${fontSize.p}
+  font-size: ${fontSize.p};
 }
 `
 
