@@ -18,7 +18,7 @@ class Popup extends Component{
   render(){
     return(
 
-        <PopupWrap>
+        <PopupWrap className="popup-wrap">
           <PopupDiv className='popup'>
             <CloseButton onClick={(e)=>this.props.toggleAction(e, null)} >X Close</CloseButton>
             {this.props.children}
