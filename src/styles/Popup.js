@@ -4,6 +4,7 @@ import styled from "styled-components";
 // styles for the popup
 
 const PopupDiv =  styled.div`
+  position: relative;
   background-color: ${colors.modalBackgorund};
   padding: 20px;
   margin: 20px 0;

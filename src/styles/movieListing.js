@@ -9,6 +9,12 @@ const MovieListingDiv = styled.div`
   }
 `
 
+const MovieListingDetail = styled.div`
+  @media (min-width: 625px){
+    display: flex;
+  }
+`
+
 const PosterSmall = styled.img`
   @media (min-width: 525px){
     margin-right: 20px;
@@ -38,4 +44,4 @@ const ReleaseDate = styled.p`
   font-weight: ${weight.bold};
 `
 
-export { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate }
+export { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate, MovieListingDetail }

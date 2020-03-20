@@ -19,7 +19,9 @@ const Button =  styled.button`
 
 // close button for popup
 const CloseButton = styled(Button)`
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 `
 
 // detail button on movie listing

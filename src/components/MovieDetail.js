@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 // styled components
-import { MovieListingDiv, PosterSmall, MovieTitle, Score, ReleaseDate } from "../styles/movieListing"
+import { MovieListingDetail, PosterSmall, MovieTitle, Score, ReleaseDate } from "../styles/movieListing"
 import { FavoriteButton } from '../styles/button'
 
 // NOTE: the TMDb API contains a configuration API that includes information about the image URL
@@ -24,7 +24,7 @@ const imgSizeMed = "w300"
 class MovieDetail extends Component{
   render(){
     return (
-      <MovieListingDiv className="movie-detail">
+      <MovieListingDetail className="movie-detail">
         {/* only render a poster if the movie data includes an image path for the poster */}
         {this.props.poster &&
           <PosterSmall src={`${baseUrl}${imgSizeMed}/${this.props.poster}`} alt={`${this.props.title} poster`} />
@@ -42,7 +42,7 @@ class MovieDetail extends Component{
           <p>{this.props.overview}</p>
         </div>
 
-      </MovieListingDiv>
+      </MovieListingDetail>
     )
   }
 }
